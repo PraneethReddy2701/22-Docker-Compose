@@ -1,0 +1,19 @@
+networks:
+  default:
+    driver: bridge
+    name: roboshop
+
+services:
+  mongodb:
+    name: praneeth2701/mongodb:v1
+    container_name: mongodb
+  catalogue:
+    name: praneeth2701/catalogue:v1
+    container_name: catalogue
+    environment:
+      MONGO="true" \
+      MONGO_URL="mongodb://mongodb:27017/catalogue"
+    depends_on: 
+    - mongodb
+
+    
