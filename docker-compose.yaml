@@ -18,4 +18,14 @@ services:
   redis:
     image: praneeth2701/redis:v1
     container_name: redis
+  user:
+    image: praneeth2701/user:v1
+    container_name: user
+    environment:
+      MONGO: "true" 
+      REDIS_URL: "redis://redis:6379" 
+      MONGO_URL: "mongodb://mongodb:27017/users"
+    depends_on: 
+    - redis
+    - mongodb
 
