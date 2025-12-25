@@ -5,10 +5,10 @@ networks:
 
 services:
   mongodb:
-    name: praneeth2701/mongodb:v1
+    image: praneeth2701/mongodb:v1
     container_name: mongodb
   catalogue:
-    name: praneeth2701/catalogue:v1
+    image: praneeth2701/catalogue:v1
     container_name: catalogue
     environment:
       MONGO: "true"
