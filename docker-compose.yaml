@@ -73,5 +73,16 @@ services:
     - rabbitmq
     - user
     - cart
+  frontned:
+    image: praneeth2701/frontend:v1
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - user
+    - cart
+    - shipping
+    - payment
 
     
